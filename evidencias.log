@@ -140,3 +140,74 @@ w pssa   assageiro 3
 exit
 ^C
 Script done on 2026-11-04 16:51:06-03:00 [COMMAND_EXIT_CODE="130"]
+Script started on 2026-11-04 17:51:01-03:00 [COMMAND="gcc -Wall -Wextra -pthread -std=c99 -o teste teste.c sync_car.c && ./teste" TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="139" LINES="6"]
+[01m[Kteste.c:[m[K In function ‘[01m[Kalarm_handler[m[K’:
+[01m[Kteste.c:54:24:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kfoo[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   54 | void alarm_handler([01;35m[Kint foo[m[K)
+      |                    [01;35m[K~~~~^~~[m[K
+[01m[Kteste.c:[m[K In function ‘[01m[Kmain[m[K’:
+[01m[Kteste.c:73:9:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[Ksrandom[m[K’; did you mean ‘[01m[Ksrand[m[K’? [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+   73 |         [01;35m[Ksrandom[m[K(getpid() ^ time(NULL));
+      |         [01;35m[K^~~~~~~[m[K
+      |         [32m[Ksrand[m[K
+[01m[Kteste.c:105:34:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[Krandom[m[K’; did you mean ‘[01m[Krand_r[m[K’? [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+  105 |                 int free_seats = [01;35m[Krandom[m[K() % max_free_seats_per_car;
+      |                                  [01;35m[K^~~~~~[m[K
+      |                                  [32m[Krand_r[m[K
+[01m[Kteste.c:129:41:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[Kusleep[m[K’; did you mean ‘[01m[Ksleep[m[K’? [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+  129 |                                         [01;35m[Kusleep[m[K(random() % 2);
+      |                                         [01;35m[K^~~~~~[m[K
+      |                                         [32m[Ksleep[m[K
+car entering station with 39 free seats
+Error: station_load_car returned early!
+
+Script done on 2026-11-04 17:51:01-03:00 [COMMAND_EXIT_CODE="1"]
+Script started on 2026-11-04 18:08:27-03:00 [COMMAND="gcc -Wall -Wextra -pthread -std=c99 -o teste teste.c sync_car.c && ./teste" TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="139" LINES="11"]
+[01m[Kteste.c:[m[K In function ‘[01m[Kalarm_handler[m[K’:
+[01m[Kteste.c:54:24:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kfoo[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   54 | void alarm_handler([01;35m[Kint foo[m[K)
+      |                    [01;35m[K~~~~^~~[m[K
+[01m[Kteste.c:[m[K In function ‘[01m[Kmain[m[K’:
+[01m[Kteste.c:73:9:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[Ksrandom[m[K’; did you mean ‘[01m[Ksrand[m[K’? [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+   73 |         [01;35m[Ksrandom[m[K(getpid() ^ time(NULL));
+      |         [01;35m[K^~~~~~~[m[K
+      |         [32m[Ksrand[m[K
+[01m[Kteste.c:105:34:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[Krandom[m[K’; did you mean ‘[01m[Krand_r[m[K’? [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+  105 |                 int free_seats = [01;35m[Krandom[m[K() % max_free_seats_per_car;
+      |                                  [01;35m[K^~~~~~[m[K
+      |                                  [32m[Krand_r[m[K
+[01m[Kteste.c:129:41:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[Kusleep[m[K’; did you mean ‘[01m[Ksleep[m[K’? [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]8;;[m[K]
+  129 |                                         [01;35m[Kusleep[m[K(random() % 2);
+      |                                         [01;35m[K^~~~~~[m[K
+      |                                         [32m[Ksleep[m[K
+car entering station with 10 free seats
+car departed station with 10 new passenger(s) (expected 10)
+car entering station with 29 free seats
+car departed station with 29 new passenger(s) (expected 29)
+car entering station with 4 free seats
+car departed station with 4 new passenger(s) (expected 4)
+car entering station with 47 free seats
+car departed station with 47 new passenger(s) (expected 47)
+car entering station with 1 free seats
+car departed station with 1 new passenger(s) (expected 1)
+car entering station with 45 free seats
+Error: station_load_car failed
+
+Script done on 2026-11-04 18:08:29-03:00 [COMMAND_EXIT_CODE="1"]
+Script started on 2026-11-04 18:42:25-03:00 [COMMAND="make clean && make run" TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="139" LINES="11"]
+rm -f teste *.o
+gcc -Wall -Wextra -pthread -std=c99 -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=700 -Wno-unused-parameter -o teste teste.c sync_car.c
+./teste
+car entering station with 28 free seats
+car departed station with 28 new passenger(s) (expected 28)
+car entering station with 11 free seats
+car departed station with 11 new passenger(s) (expected 11)
+car entering station with 30 free seats
+car departed station with 30 new passenger(s) (expected 30)
+car entering station with 6 free seats
+car departed station with 6 new passenger(s) (expected 6)
+car entering station with 36 free seats
+car departed station with 25 new passenger(s) (expected 25)
+Looks good!
+
+Script done on 2026-11-04 18:42:27-03:00 [COMMAND_EXIT_CODE="0"]

@@ -29,7 +29,6 @@ void station_on_board(struct station *station) {
     pthread_mutex_lock(&station->lock);
 
     station->boarded_passengers++;
-
     pthread_cond_signal(&station->passengers_boarded);
 
     pthread_mutex_unlock(&station->lock);
@@ -46,9 +45,11 @@ void station_load_car(struct station *station, int count) {
     station->free_seats = count;
     station->boarded_passengers = 0;
 
+    int passengers_to_board = station->waiting_passengers < count ? station->waiting_passengers : count;
+
     pthread_cond_broadcast(&station->car_arrived);
 
-    while (station->free_seats > 0 && station->waiting_passengers > 0) {
+    while (station->boarded_passengers < passengers_to_board) {
         pthread_cond_wait(&station->passengers_boarded, &station->lock);
     }
 
