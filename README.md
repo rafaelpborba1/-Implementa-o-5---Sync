@@ -4,9 +4,15 @@ Sincronização do Metrô
 
 1. Arquivos .c Utilizados
 
-*sync_car.c:* Contém a implementação da struct station e das funções de sincronização de threads (station_init, station_load_car, station_wait_for_car e station_on_board).
+*sync_car.c:* Detalhamento das funções de sincronização de threads (station_init, station_load_car, station_wait_for_car e station_on_board).
+
+*sync_car.h*: esboço das funções e criação da struct station
 
 *teste.c:* Arquivo de testes que foi disponibilizado e cria as threads concorrentes (passageiros e trem) para simular e validar o embarque.
+
+*evidencias.log*: guarda todas as saidas do terminal em um arquivo
+
+*makefile*: roda o programa via make e automatizado
 
 2. Sistema Operacional de Desenvolvimento
 
