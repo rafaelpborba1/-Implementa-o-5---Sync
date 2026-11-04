@@ -15,20 +15,19 @@ SO: Linux(Ubuntu via WSL)
 3. Como Compilar, Executar e Testar
    
 Compilar:
-'''bash
+
 make
 
 (Gera o executável sync_car)
 
 Após isso, colocar o 
-'''bash
+
 ./sync_car
 
 Executar e Testar:
 
-'''bash 
 make run
 
 Limpar arquivos gerados:
-'''bash
+
 make clean
