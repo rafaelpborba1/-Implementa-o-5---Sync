@@ -6,3 +6,137 @@ rm -f sync_car *.o
 make: *** No rule to make target 'main.c', needed by 'sync_car'.  Stop.
 
 Script done on 2026-11-03 18:04:53-03:00 [COMMAND_EXIT_CODE="2"]
+Script started on 2026-11-03 22:47:35-03:00 [COMMAND="whoami && pwd && date && make clean && make && ./sync_car" TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="139" LINES="11"]
+rafaelborba
+/home/rafaelborba/rpb
+Tue Nov  3 22:47:35 -03 2026
+rm -f sync_car *.o
+gcc -Wall -Wextra -pthread -std=c99 -o sync_car main.c sync_car.c
+Estacao inicializada com sucesso!
+Passageiros aguardando: 0
+
+Script done on 2026-11-03 22:47:36-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-04 11:33:25-03:00 [COMMAND="whoami && pwd && date && make clean && make && ./sync_car" TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="139" LINES="11"]
+rafaelborba
+/home/rafaelborba/rpb
+Wed Nov  4 11:33:25 -03 2026
+rm -f sync_car *.o
+gcc -Wall -Wextra -pthread -std=c99 -o sync_car main.c sync_car.c
+In file included from [01m[Kmain.c:4[m[K:
+[01m[Ksync_car.h:10:5:[m[K [01;31m[Kerror: [m[Kunknown type name ‘[01m[Kpthread_mutex_lock_t[m[K’
+   10 |     [01;31m[Kpthread_mutex_lock_t[m[K lock;
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[Ksync_car.c:2[m[K:
+[01m[Ksync_car.h:10:5:[m[K [01;31m[Kerror: [m[Kunknown type name ‘[01m[Kpthread_mutex_lock_t[m[K’
+   10 |     [01;31m[Kpthread_mutex_lock_t[m[K lock;
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Ksync_car.c:[m[K In function ‘[01m[Kstation_init[m[K’:
+[01m[Ksync_car.c:8:24:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of ‘[01m[Kpthread_mutex_init[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+    8 |     pthread_mutex_init([01;35m[K&station->lock[m[K, NULL);
+      |                        [01;35m[K^~~~~~~~~~~~~~[m[K
+      |                        [01;35m[K|[m[K
+      |                        [01;35m[Kint *[m[K
+In file included from [01m[Ksync_car.c:1[m[K:
+[01m[K/usr/include/pthread.h:781:49:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[Kpthread_mutex_t *[m[K’ but argument is of type ‘[01m[Kint *[m[K’
+  781 | extern int pthread_mutex_init ([01;36m[Kpthread_mutex_t *__mutex[m[K,
+      |                                [01;36m[K~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[Ksync_car.c:[m[K In function ‘[01m[Kstation_wait_for_car[m[K’:
+[01m[Ksync_car.c:14:24:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of ‘[01m[Kpthread_mutex_lock[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+   14 |     pthread_mutex_lock([01;35m[K&station->lock[m[K);
+      |                        [01;35m[K^~~~~~~~~~~~~~[m[K
+      |                        [01;35m[K|[m[K
+      |                        [01;35m[Kint *[m[K
+[01m[K/usr/include/pthread.h:794:49:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[Kpthread_mutex_t *[m[K’ but argument is of type ‘[01m[Kint *[m[K’
+  794 | extern int pthread_mutex_lock ([01;36m[Kpthread_mutex_t *__mutex[m[K)
+      |                                [01;36m[K~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[Ksync_car.c:19:50:[m[K [01;35m[Kwarning: [m[Kpassing argument 2 of ‘[01m[Kpthread_cond_wait[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+   19 |         pthread_cond_wait(&station->car_arrived, [01;35m[K&station->lock[m[K);
+      |                                                  [01;35m[K^~~~~~~~~~~~~~[m[K
+      |                                                  [01;35m[K|[m[K
+      |                                                  [01;35m[Kint *[m[K
+[01m[K/usr/include/pthread.h:1134:59:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[Kpthread_mutex_t * restrict[m[K’ but argument is of type ‘[01m[Kint *[m[K’
+ 1134 |                               [01;36m[Kpthread_mutex_t *__restrict __mutex[m[K)
+      |                               [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[Ksync_car.c:24:26:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of ‘[01m[Kpthread_mutex_unlock[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+   24 |     pthread_mutex_unlock([01;35m[K&station->lock[m[K);
+      |                          [01;35m[K^~~~~~~~~~~~~~[m[K
+      |                          [01;35m[K|[m[K
+      |                          [01;35m[Kint *[m[K
+[01m[K/usr/include/pthread.h:835:51:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[Kpthread_mutex_t *[m[K’ but argument is of type ‘[01m[Kint *[m[K’
+  835 | extern int pthread_mutex_unlock ([01;36m[Kpthread_mutex_t *__mutex[m[K)
+      |                                  [01;36m[K~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[Ksync_car.c:[m[K In function ‘[01m[Kstation_on_board[m[K’:
+[01m[Ksync_car.c:27:24:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of ‘[01m[Kpthread_mutex_lock[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+   27 |     pthread_mutex_lock([01;35m[K&station->lock[m[K);
+      |                        [01;35m[K^~~~~~~~~~~~~~[m[K
+      |                        [01;35m[K|[m[K
+      |                        [01;35m[Kint *[m[K
+[01m[K/usr/include/pthread.h:794:49:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[Kpthread_mutex_t *[m[K’ but argument is of type ‘[01m[Kint *[m[K’
+  794 | extern int pthread_mutex_lock ([01;36m[Kpthread_mutex_t *__mutex[m[K)
+      |                                [01;36m[K~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[Ksync_car.c:33:26:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of ‘[01m[Kpthread_mutex_unlock[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+   33 |     pthread_mutex_unlock([01;35m[K&station->lock[m[K);
+      |                          [01;35m[K^~~~~~~~~~~~~~[m[K
+      |                          [01;35m[K|[m[K
+      |                          [01;35m[Kint *[m[K
+[01m[K/usr/include/pthread.h:835:51:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[Kpthread_mutex_t *[m[K’ but argument is of type ‘[01m[Kint *[m[K’
+  835 | extern int pthread_mutex_unlock ([01;36m[Kpthread_mutex_t *__mutex[m[K)
+      |                                  [01;36m[K~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[Ksync_car.c:[m[K In function ‘[01m[Kstation_load_car[m[K’:
+[01m[Ksync_car.c:36:24:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of ‘[01m[Kpthread_mutex_lock[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+   36 |     pthread_mutex_lock([01;35m[K&station->lock[m[K);
+      |                        [01;35m[K^~~~~~~~~~~~~~[m[K
+      |                        [01;35m[K|[m[K
+      |                        [01;35m[Kint *[m[K
+[01m[K/usr/include/pthread.h:794:49:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[Kpthread_mutex_t *[m[K’ but argument is of type ‘[01m[Kint *[m[K’
+  794 | extern int pthread_mutex_lock ([01;36m[Kpthread_mutex_t *__mutex[m[K)
+      |                                [01;36m[K~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[Ksync_car.c:39:30:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of ‘[01m[Kpthread_mutex_unlock[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+   39 |         pthread_mutex_unlock([01;35m[K&station->lock[m[K);
+      |                              [01;35m[K^~~~~~~~~~~~~~[m[K
+      |                              [01;35m[K|[m[K
+      |                              [01;35m[Kint *[m[K
+[01m[K/usr/include/pthread.h:835:51:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[Kpthread_mutex_t *[m[K’ but argument is of type ‘[01m[Kint *[m[K’
+  835 | extern int pthread_mutex_unlock ([01;36m[Kpthread_mutex_t *__mutex[m[K)
+      |                                  [01;36m[K~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[Ksync_car.c:48:57:[m[K [01;35m[Kwarning: [m[Kpassing argument 2 of ‘[01m[Kpthread_cond_wait[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+   48 |         pthread_cond_wait(&station->passengers_boarded, [01;35m[K&station->lock[m[K);
+      |                                                         [01;35m[K^~~~~~~~~~~~~~[m[K
+      |                                                         [01;35m[K|[m[K
+      |                                                         [01;35m[Kint *[m[K
+[01m[K/usr/include/pthread.h:1134:59:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[Kpthread_mutex_t * restrict[m[K’ but argument is of type ‘[01m[Kint *[m[K’
+ 1134 |                               [01;36m[Kpthread_mutex_t *__restrict __mutex[m[K)
+      |                               [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+[01m[Ksync_car.c:52:26:[m[K [01;35m[Kwarning: [m[Kpassing argument 1 of ‘[01m[Kpthread_mutex_unlock[m[K’ from incompatible pointer type [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wincompatible-pointer-types-Wincompatible-pointer-types]8;;[m[K]
+   52 |     pthread_mutex_unlock([01;35m[K&station->lock[m[K);
+      |                          [01;35m[K^~~~~~~~~~~~~~[m[K
+      |                          [01;35m[K|[m[K
+      |                          [01;35m[Kint *[m[K
+[01m[K/usr/include/pthread.h:835:51:[m[K [01;36m[Knote: [m[Kexpected ‘[01m[Kpthread_mutex_t *[m[K’ but argument is of type ‘[01m[Kint *[m[K’
+  835 | extern int pthread_mutex_unlock ([01;36m[Kpthread_mutex_t *__mutex[m[K)
+      |                                  [01;36m[K~~~~~~~~~~~~~~~~~^~~~~~~[m[K
+make: *** [makefile:7: sync_car] Error 1
+
+Script done on 2026-11-04 11:33:25-03:00 [COMMAND_EXIT_CODE="2"]
+Script started on 2026-11-04 16:45:18-03:00 [COMMAND="whoami && pwd && date && make clean && make && ./sync_car" TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="139" LINES="6"]
+rafaelborba
+/home/rafaelborba/rpb
+Wed Nov  4 16:45:18 -03 2026
+rm -f sync_car *.o
+gcc -Wall -Wextra -pthread -std=c99 -o sync_car main.c sync_car.c
+
+---> [TREM] Chegou na estacao com 3 vagas disponíveis! <===
+
+[Passageiro 4] Conseguiu vaga e embarcou!
+[Passageiro 2] Conseguiu vaga e embarcou!
+[Passageiro 1] Conseguiu vaga e embarcou!
+[Passageiro 1] Sentado com sucesso.
+
+---> [TREM] Fechou as portas e partiu! <===
+
+[Passageiro 2] Sentado com sucesso.
+[Passageiro 4] Sentado com sucesso.
+w pssa   assageiro 3
+exit
+^C
+Script done on 2026-11-04 16:51:06-03:00 [COMMAND_EXIT_CODE="130"]
